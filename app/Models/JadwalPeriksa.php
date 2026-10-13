@@ -38,7 +38,7 @@ class JadwalPeriksa extends Model
      */
     public function sedangBerlangsung(): bool
     {
-        $sekarang = now()->secondsSinceMidnight();
+        $sekarang = (int) now()->secondsSinceMidnight();
 
         return $this->hariIni()
             && $sekarang >= $this->detik($this->jam_mulai)
